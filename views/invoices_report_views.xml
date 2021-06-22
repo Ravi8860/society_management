@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<template id="society_flat" inherit_id="account.view_move_form">
+		<xpath expr="//div[@id='informations']" position="inside">
+			  <div t-if="doc.flat_no_id" class="col-auto mw-100 mb-2">
+                    <strong>Flat</strong>
+                    <p class="m-0" t-field="doc.flat_no_id"/>
+                </div>
+		</xpath>
+	</template>
+</odoo>

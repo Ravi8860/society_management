@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_biz_maintenance,biz.maintenance,model_biz_maintenance,,1,1,1,1
+access_biz_flats,biz.flats,model_biz_flats,,1,1,1,1
+access_biz_allotment,biz.allotment,model_biz_allotment,,1,1,1,1
+access_biz_complain,biz.complain,model_biz_complain,,1,1,1,1
+access_biz_visitor,biz.visitor,model_biz_visitor,,1,1,1,1
+access_biz_res_partner,biz.res.partner,model_res_partner,,1,1,1,1

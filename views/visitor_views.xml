@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>   
+    <record id="view_visitor_form" model="ir.ui.view">
+        <field name="name">biz.visitor.form</field>
+        <field name="model">biz.visitor</field>
+        <field name="arch" type="xml">
+        <form string="VisitorForm">
+            <sheet>
+                <group>
+                    <div>
+                        <h1>
+                        <field name="visitor_name" placeholder="Visitor Name"/>
+                    </h1>
+                    </div>
+                    <div>
+                        <field name="image" widget="image" class="oe_avatar" style="text-align:right;"/>
+                    </div> 
+                    <group>         
+                        <field name="phone_no"/>  
+                        <field name="address"/>             
+                    </group>
+                    <group>
+                        <field name="block"/>
+                        <field name="flat_numbers"/>
+                    </group>
+                    <group>
+                        <field name="whom_to_meet"/>
+                    </group>
+                    <group>
+                        <field name="reason_to_meet"/>
+                    </group>
+                </group>
+            </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="activity_ids" widget="mail_activity"/>
+                <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+            </div>
+        </form>
+    </field>
+</record>
+
+    <record id="view_visitor_tree" model="ir.ui.view">
+        <field name="name">biz.visitor.tree</field>
+        <field name="model">biz.visitor</field>
+        <field name="arch" type="xml">
+            <tree string="VisitorTree">
+                <field name="visitor_name"/>
+            	<field name="image"/>
+            	<field name="phone_no"/>
+            	<field name="address"/>
+            	<field name="block"/>
+            	<field name="flat_numbers"/>
+            	<field name="whom_to_meet"/>
+            	<field name="reason_to_meet"/>
+            </tree>
+        </field>
+    </record>
+        
+    <record model="ir.actions.act_window" id="action_view_visitor">
+        <field name="name">Visitor</field>
+        <field name="res_model">biz.visitor</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="society_management" name="Society Management"/>
+    <menuitem id="society management_visitor" name="Visitor" parent="society_management" action="action_view_visitor" sequence="5"/>
+    
+</odoo>

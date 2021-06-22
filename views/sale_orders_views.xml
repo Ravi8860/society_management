@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sale_order" model="ir.ui.view">
+        <field name="name">sale.order.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+        <field name="partner_id" position="after">
+          <field name="flat_no_id"/>
+        </field>
+      </field>
+    </record>
+
+    <record id="sale_order_partner" model="ir.ui.view">
+        <field name="name">sale.order.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+        <field name="flat_no_id" position="after">
+          <field name="flattype"/>
+        </field>
+      </field>
+    </record>
+
+    <record id="sale_order_block" model="ir.ui.view">
+        <field name="name">sale.order.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+        <field name="flattype" position="after">
+          <field name="block"/>
+        </field>
+      </field>
+    </record>   
+</odoo>

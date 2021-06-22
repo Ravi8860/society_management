@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_partner" model="ir.ui.view">
+        <field name="name">res.partner.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+        <field name="vat" position="replace">
+          <field name="block"/>
+        </field>
+      </field>
+    </record>
+
+    <record id="res_partner_flat" model="ir.ui.view">
+        <field name="name">res.partner.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+        <field name="function" position="replace">
+          <field name="flat_no_id"/>
+        </field>
+      </field>
+    </record>
+
+    <record id="res_partner_types" model="ir.ui.view">
+        <field name="name">res.partner.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+        <field name="block" position="after">
+          <field name="flattype"/>
+        </field>
+      </field>
+    </record>
+
+
+    <menuitem id="society_contact" name="Member" parent="society_management" action="base.action_partner_form" sequence="1"/>
+
+    <menuitem id="society_sale" name="Report" parent="society_management" action="sale.action_quotations_with_onboarding" sequence="9"/>
+
+    <menuitem id="society_invoice" name="Invoice" parent="society_management" action="account.action_move_out_invoice_type" sequence="8"/>
+
+    <menuitem id="society_orders" name="sale" parent="society_management" action="sale.action_orders" sequence="7"/>
+    
+</odoo>

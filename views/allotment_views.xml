@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="biz_allotment_form" model="ir.ui.view">
+        <field name="name">biz.allotment.form</field>
+        <field name="model">biz.allotment</field>
+        <field name="arch" type="xml">
+             <form string="form">
+                <sheet>
+                    <group>
+                        <div>
+                            <field name="name" placeholder="Name"/>
+                        </div>
+                        <div>
+                            <field name="image" widget="image" class="oe_avatar" style="text-align:right;"/>
+                        </div> 
+                        <group>         
+                            <field name="contact_no"/>  
+                            <field name="flat_numbers"/>             
+                        </group>
+                        <group>
+                            <field name="flattype"/>
+                            <field name="total_member"/>
+                        </group>
+                        <group>
+                            <field name="permanent_address"/>
+                        </group>
+                        <group>
+                            <field name="allotment_date"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="biz_allotment_tree" model="ir.ui.view">
+        <field name="name">biz.allotment.tree</field>
+        <field name="model">biz.allotment</field>
+        <field name="arch" type="xml">
+            <tree string="tree">
+                    <field name="name"/>
+                    <field name="image"/>
+                    <field name="contact_no"/>
+                    <field name="flat_numbers"/>
+                    <field name="flattype"/>
+                    <field name="total_member"/>
+                    <field name="permanent_address"/>
+                    <field name="allotment_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_view_allotment">
+        <field name="name">Allotment</field>
+        <field name="res_model">biz.allotment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="society_management" name="Society Management"/>
+    <menuitem id="society management_allotment" name="Allotment" parent="society_management" action="action_view_allotment" sequence="3"/>
+</odoo>

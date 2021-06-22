@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="biz_flats_form" model="ir.ui.view">
+        <field name="name">biz.flats.form</field>
+        <field name="model">biz.flats</field>
+        <field name="arch" type="xml">
+            <form string="flats">
+                <sheet>
+                    <group>
+                        <div>
+                            <h1>
+                            <field name="name" placeholder="Name"/>
+                        </h1>
+                        </div>
+                        <div>
+                            <field name="image" widget="image" class="oe_avatar" style="text-align:right;"/>
+                        </div> 
+                        <group>         
+                            <field name="floor"/>  
+                            <field name="flattype"/>             
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="biz_flats_tree" model="ir.ui.view">
+        <field name="name">biz.flats.tree</field>
+        <field name="model">biz.flats</field>
+        <field name="arch" type="xml">
+            <tree string="tree">
+                <field name="name"/>
+                <field name="floor"/>
+                
+                <field name="flattype"/>
+                <field name= "maintenance_charge"/>     
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_view_flats">
+        <field name="name">Flats</field>
+        <field name="res_model">biz.flats</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+        <menuitem id="society_management" name="Society Management"/>
+        <menuitem id="society management_flats" name="Flats" parent="society_management" action="action_view_flats" sequence="2"/>
+</odoo>

@@ -21,6 +21,9 @@
 		'views/sale_orders_views.xml',
 		'views/sale_report_views.xml',
 		'views/invoices_views.xml',
+		
+		
+		
 	
 	],
 	
